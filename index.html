@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quiniela F1</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
 <body>
 
-<h1>Show Checkboxes</h1>
+  <h1>Selecciona tus pilotos favoritos que quieres que aparezcan en tu quiniela</h1>
 
-<form action="/action_page.php">
-  <input type="checkbox" id="driver1" name="driver1" value="PER">
-  <label for="driver1"> PER - Sergio Perez</label><br>
-  <input type="checkbox" id="driver2" name="driver2" value="VER">
-  <label for="driver2"> VER - Max Verstappen</label><br>
-  <input type="checkbox" id="driver3" name="driver3" value="LEC">
-  <label for="driver3"> LEC - Charles Leclerc</label><br><br>
-  <input type="submit" value="Submit">
-</form>
-
-</body>
+  <form>
+    <input type="checkbox" id="driver1" name="driver1" value="PER">
+    <label for="driver1"> PER - Sergio Perez</label><br>
+    <input type="checkbox" id="driver2" name="driver2" value="VER">
+    <label for="driver2"> VER - Max Verstappen</label><br>
+    <input type="checkbox" id="driver3" name="driver3" value="LEC">
+    <label for="driver3"> LEC - Charles Leclerc</label><br><br>
+  
+  </form>
+  <script type="text/javascript">
+  Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Confirmar').show().onClick(function () {
+        const data = JSON.stringify({prueba:"existosa"});
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
+  </script>
+  </body>
+<script type="text/javascript">
+    Telegram.WebApp.expand();
+</script>
 </html>
